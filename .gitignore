@@ -24,3 +24,4 @@ node_modules
 # Personal files
 src/assets
 src/assets/*
+README.txt
