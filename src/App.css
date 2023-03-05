@@ -1,0 +1,276 @@
+section {
+  min-height: max(50vh, 350px);
+  max-height: fit-content;
+  max-width: min(75vw, 1200px);
+  min-width: min(75vw, 1200px);
+  /* background-color: rgb(231, 231, 231); */
+  color: whitesmoke;
+}
+
+.verticalFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.viewport {
+  width: 100%;
+  min-width: 100vw;
+  max-width: 100vh;
+  height: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  position: relative;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.languageSwitch {
+  z-index: 11; 
+  position: absolute;
+  display: flex;
+  width: 95%;
+  justify-content: end;
+  margin-right: max(15px, 10vw);
+  color: white;
+}
+
+.languageSwitch > * {
+  width: fit-content;
+}
+
+.languageSwitch > *:hover {
+  cursor: pointer;
+}
+
+.callToAction {
+  text-decoration: underline;
+  /* align-self: flex-start; */
+  font-size: larger;
+  font-weight: bolder;
+  border-style: solid;
+  border-width: thin;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 7px;
+  border-radius: 25px;
+}
+
+.callToAction:hover {
+  cursor: pointer;
+  background-color: rgb(17, 39, 80);
+  color: whitesmoke;
+}
+
+.navbar {
+  z-index: 5;
+  /* background-color: red; */
+  position: absolute;
+
+  margin-left: 0;
+  margin-top: 15%;
+
+  width: fit-content;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navbar > ul {
+  padding: 0;
+  margin: 0;
+  color: antiquewhite;
+
+  font-weight: bold;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon{
+  min-height: 35px;
+  height: 35px;
+  min-width: 35px;
+  width: 35px;
+}
+
+.largeItem {
+  height: 1500px;
+  background-color: green;
+}
+
+.contentContainer {
+  position: relative;
+  max-height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.colouredBackground {
+  position: absolute;
+  background-image: linear-gradient(to bottom,white 60vh, orange 100vh, orangered);
+  min-height: calc((max(50vh, 350px) * 5.5) + 100vh);
+  z-index: -1;
+  min-width: 100vw;
+  max-width: 100vw;
+}
+
+.greetingSection {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  border-bottom-right-radius: 60% 30%;
+  contain: strict;
+}
+
+.greetingTitle {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  max-width: 100%;
+  color: rgb(17, 39, 80);
+  min-height: 90vh;
+  max-height: 90vh;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.greetingTitle > * {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  margin-right: max(40px, 15vw);
+}
+
+
+.greetingTitle > * > h1 {
+  font-size: 5rem;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.greetingTitle > h3 {
+  max-width: 35%;
+}
+
+/* .greetingTitle > div > *:first-child {
+  font-size: 6rem;
+} */
+
+.profilePicture {
+  margin-top: min(10vh, 50px);
+  margin-left: max(5vw, 50px);
+  max-height: max(60vh, 450px);
+  position: absolute;
+  z-index: 4;
+}
+
+.shapedBorder1 {
+  border-radius: 36% 64% 71% 29% / 51% 38% 62% 49%;
+}
+
+.backGroundImageSectionContainer {
+  position: absolute;
+  overflow: hidden;
+  /* display: grid;
+  place-items: center; */
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  justify-content: end;
+}
+
+.backGroundImageSection {
+  max-width: 100%;
+  min-height: 110vh;
+  min-width: calc(110vh * 1.3333); /* the ratio of the image */
+  margin-left: 0;
+  /* filter: grayscale(0.85); */
+  z-index: 1;
+  margin-top: -10vh ;
+}
+
+.colorBlockFade {
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  background-color: none;
+  background-image: linear-gradient(120deg, transparent max(50%, 500px), rgb(231, 231, 231) max(80%, 700px));
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-origin: border-box;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.textHolder {
+  height: fit-content;
+  max-height: fit-content;
+}
+
+.project > div {
+  min-width: 300px;
+  max-width: 40%;
+}
+
+/* .textHolder {
+  min-width: 300px;
+  max-width: 40%;
+}
+
+.imageHolder {
+  min-width: 300px;
+  max-width: 300px;
+} */
+
+.project > div > img {
+  max-height: 90%;
+  max-width: 100%;
+}
+
+.project > *:hover {
+  cursor: pointer;
+}
+
+.project > *:hover + * {
+  scale: 1.1;
+}
+
+.project > div > img:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.reverseRow {
+  flex-direction: row-reverse;
+}
+
+.mainCallToAction {
+  background-image: linear-gradient(to bottom right, white, lightgray);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.mainCallToAction > * {
+  color: rgb(17, 39, 80);
+}

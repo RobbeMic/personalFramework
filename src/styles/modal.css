@@ -1,0 +1,99 @@
+.modalBackground {
+    position: absolute;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    opacity: 1;
+    transition: all, 100ms;
+    overflow-y: auto;
+}
+
+.modal {
+    position: relative;
+    margin-top: 5vh;
+    margin-bottom: 15px;
+    min-height: 90vh;
+    height: fit-content;
+    max-width: 90vw;
+    min-width: 90vw;
+    background-color: whitesmoke;
+    transition: all 300ms ease-out; 
+}
+
+.hidden {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
+
+.hidden > .modal {
+    transform: scale(0.2) translateY(200vh) translateX(200vw) rotateY(85deg) rotateX(-75deg);
+}
+
+/* .hidden > .modal {
+    transform: rotateX(80deg) rotateY(-80deg) rotateZ(-45deg) scale(0.2);
+} */
+
+.modal > span {
+    min-width: fit-content;
+    padding: 2px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+.modal > span:hover {
+    cursor: pointer;
+    font-weight: bold;
+    transition: all, 100ms;
+}
+
+.modalGrid {
+    display: grid;
+    margin: 20px;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modalGrid > * {
+    background-color: slategray;
+}
+
+.aspect-ratio-1 {
+    aspect-ratio: 1;
+}
+
+.grid-span-2 {
+    grid-column: span 2;
+}
+
+.titleSquare {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: end;
+}
+
+.titleSquare > h3 {
+    margin-bottom: 50px;
+    max-width: 50%;
+}
+
+.imageList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.imageList > ul {
+    max-width: 250px;
+    background-color: gray;
+}
