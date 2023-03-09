@@ -21,7 +21,7 @@ section {
 .colouredBackground {
   position: absolute;
   background-image: linear-gradient(to bottom,white 60vh, orange 100vh, orangered);
-  min-height: calc((max(50vh, 350px) * 8.5) + 100vh);
+  min-height: calc((max(50vh, 350px) * 11) + 100vh);
   z-index: -1;
   min-width: 100vw;
   max-width: 100vw;
@@ -157,7 +157,7 @@ section {
 }
 
 /* .contentContainer > * {
-  transform-style: preserve-3d;
+  max-height: fit-content;
 } */
 
 .blackScreen {
@@ -226,11 +226,42 @@ section {
   font-size: 6rem;
 } */
 
-/* .pictureContainer{
-  z-index: 12;
-  width: fit-content;
+.interestsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   height: fit-content;
-} */
+  min-height: fit-content;
+  margin-bottom: 20vh;
+}
+
+.interestsSection > div {
+  max-width: min(45%, 500px);
+  padding-right: 40%;
+  margin-top: -25px;
+}
+
+.interestsSection > div > h2 > span {
+  font-size: larger;
+  vertical-align: top;
+}
+
+.interestsSection > div > * {
+  text-align: justify;
+}
+
+.interestsSection > div:first-child {
+  padding-left: 10%;
+  padding-right: 0;
+}
+
+.interestsSection > div:last-child {
+  padding-left: 50%;
+  padding-right: 0;
+  margin-top: -100px;
+}
+
 
 .profilePicture {
   margin-top: min(10vh, 50px);
@@ -359,7 +390,16 @@ section {
   scale: 1.1;
 }
 
+.project > *:hover + * > div {
+  scale: 1.1;
+}
+
 .project > div > img:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.project > div > div:hover {
   scale: 1.1;
   cursor: pointer;
 }
@@ -402,34 +442,86 @@ section {
   border-radius: 15px;
   /* margin-top: 100px; */
   padding: 25px;
-  /* min-height: 500px; */
-  height: 100%;
-  max-height: 850px;
+  min-height: max(40vh, 400px);
+  max-height: max(40vh, 400px);
+  
+  
   max-width: 60%;
   width: 100%;
 
   display: flex;
   flex-direction: row;
+  justify-content: end;
+
+  position: relative;
 }
 
 .mainCallToAction > * {
   color: rgb(17, 39, 80);
-  max-width: 60%;
+}
+
+.mainCallToAction > h1 {
+  justify-self: left;
+  align-self: flex-start;
+  font-size: 3rem;
+  position: absolute;
+  max-width: 90%;
+  left: 5%;
+}
+
+.mainCallToAction > h1 > span {
+  font-style: italic;
 }
 
 .mainCallToAction > div {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-grow: 1;
+  /* display: flex;
+  flex-direction: column; */
+  /* flex-wrap: wrap;
+  flex-grow: 1; */
+  /* justify-content: flex-start; */
+  gap: 10%;
+  align-self: end;
+  padding-right: 3%;
+  padding-bottom: 3%;
 }
 
 .mainCallToAction > div > * {
   min-width: 40%;
   max-width: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: end;
   align-items: center;
-  height: fit-content;
+  min-height: 60px;
+  gap: 10px;
+  margin-left: 20px;
 }
+
+.mainCallToAction > div > div:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mainCallToAction > div > div > * {
+  user-select: none;
+}
+
+.mainCallToAction > div > *:last-child {
+  text-decoration: underline;
+  /* align-self: flex-start; */
+  /* font-size: larger;
+  font-weight: bold;
+  border-style: solid;
+  border-width: thin;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 40px;
+  user-select: none;
+  margin-left: 0; */
+}
+
+/* .mainCallToAction > div > *:last-child:hover {
+  cursor: pointer;
+  background-color: rgb(17, 39, 80);
+  color: whitesmoke;
+} */

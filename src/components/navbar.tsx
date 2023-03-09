@@ -3,8 +3,8 @@ import React from "react";
 import { AiOutlineLinkedin } from 'react-icons/ai'
 import { HiAtSymbol } from 'react-icons/hi2'
 
-import randomPdf from '../assets/Deontologie-Robbe-Michiels.pdf'
-import essayingTheity from '../assets/Essaying_the_city_Robbe_Michiels.pdf'
+import cv_robbe_eng from '../assets/cv_robbe_eng.pdf'
+import cv_robbe_nl from '../assets/cv_robbe_nl.pdf'
 
 export default function NavBar(isDutch:boolean) {
 
@@ -36,7 +36,7 @@ export default function NavBar(isDutch:boolean) {
         <a 
             key={"cv"}
             title="download cv"
-            href={(!isDutch)? essayingTheity: randomPdf}
+            href={(!isDutch)? cv_robbe_eng: cv_robbe_nl}
             download="CV_Robbe_Michiels">
                 CV</a>
     </div>

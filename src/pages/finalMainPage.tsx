@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { AiOutlineLinkedin } from 'react-icons/ai'
-import { HiAtSymbol } from 'react-icons/hi2'
+import { HiAtSymbol, HiOutlineBuildingLibrary } from 'react-icons/hi2'
+import { BsBuildingGear, BsWindow } from 'react-icons/bs'
+import { TbSourceCode, TbBuildingChurch } from 'react-icons/tb'
 
 import '../App.css'
 import '../styles/modal.css'
@@ -9,6 +11,11 @@ import '../styles/animate.css'
 import NavBar from '../components/navbar'
 
 import ProjectDisplay from '../components/projectDisplay'
+import StudioADisplay from '../components/studioADisplay'
+import KapelDisplay from '../components/kapelDisplay'
+import DensityDisplay from '../components/densityDisplay'
+import ThesisDisplay from '../components/thesisDisplay'
+import ScoutsDisplay from '../components/scoutsDisplay'
 
 import pf from '../assets/profilePic.jpg'
 import DensityAndDesireLandscape from "../assets/tekening tuin met mensen.png"
@@ -16,11 +23,21 @@ import studioALogo from '../assets/studioALogo.png'
 import densityLogo from '../assets/DensityLogo.png'
 import kapelLogo from '../assets/KapelLogo.png'
 import scoutsLogo from '../assets/scouts/kamp21constructie1.jpg'
+import thesisLogo from '../assets/thesis logo.png'
+import thesisLogoAlt from '../assets/thesis logo alt.png'
 
-function Test() {
+import cv_robbe_eng from '../assets/cv_robbe_eng.pdf'
+import cv_robbe_nl from '../assets/cv_robbe_nl.pdf'
+
+
+function FinalMainPage() {
   const gottenLang = window.location.search
   const [isDutch, setIsDutch] = useState<boolean>(false)
   const [showStudioA, setShowStudioA] = useState<boolean>(false)
+  const [showKapel, setShowKapel] = useState<boolean>(false)
+  const [showDensity, setShowDensity] = useState<boolean>(false)
+  const [showThesis, setShowThesis] = useState<boolean>(false)
+  const [showScouts, setShowScouts] = useState<boolean>(false)
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -59,7 +76,19 @@ function Test() {
     } else {console.log("nothing observed")}
   }
 
-    
+  function copyToClipboard(event:React.MouseEvent, url:string) {
+    event.preventDefault()
+
+    navigator.clipboard.writeText(url)
+
+    alert(`Copied "${url}" to your clipboard!`)
+}
+
+function openInNewTab (event:React.MouseEvent, url:string) {
+    event.preventDefault()
+
+    window.open(url, '_blank')
+}
 
   useEffect(() => {
     if (gottenLang === "?nl") {
@@ -70,7 +99,12 @@ function Test() {
   return (
     
     <div className='viewport'>
-      {ProjectDisplay(showStudioA, setShowStudioA)}
+      {/* {ProjectDisplay(showStudioA, setShowStudioA)} */}
+      {StudioADisplay(showStudioA, setShowStudioA, isDutch)}
+      {KapelDisplay(showKapel, setShowKapel, isDutch)}
+      {DensityDisplay(showDensity, setShowDensity, isDutch)}
+      {ThesisDisplay(showThesis, setShowThesis, isDutch)}
+      {ScoutsDisplay(showScouts, setShowScouts, isDutch)}
       <div className='scrollPreventer'/>
 
       <div className='languageSwitch'>
@@ -103,7 +137,7 @@ function Test() {
               }
             </h1>
             <h3 className='appearAfterAnimation'>{(!isDutch)? "Masters-student in architecture & civil engineering" : "Master student ingenieur-architect"}</h3>
-            <p className='callToAction appearAfterAnimation'>Contact me!</p>
+            <p className='callToAction appearAfterAnimation'>{(!isDutch)? "Contact me!": "Contacteer mij!"}</p>
           </div>
         </div>
         
@@ -116,21 +150,49 @@ function Test() {
 
         
         <div className='chapterTitle'>
-          <h1 className='fitContent scale0_8 observe transition200ms'>
+          <h1 className='fitContent scale0_8 observe2 transition200ms'>
             {
               (!isDutch)?
               "My interests":
               "Mijn intresses"
             }
           </h1>
-          {/* <h3 className='scale0_5 observe transition200ms'>
-            {
-              (!isDutch)?
-              "a selection of projects I have done throughout my studies":
-              "een selectie van enkele projecten die ik doorheen mijn studies heb gemaakt"
-            }
-          </h3> */}
         </div>
+
+        <section className='interestsSection'>
+          <div className='scale0_8 secondObserve transition200ms'>
+            <h2><span><HiOutlineBuildingLibrary/></span>{(!isDutch)? " Renovations": " Renovaties"}</h2>
+            <p>
+              {
+                (!isDutch)?
+                "Old buildings along with all their imperfections and contradictions intrigue me. I like to go out and recreate the structure and layered logic from observations and then get to work on this.":
+                "Oude gebouwen samen met al hun imperfecties en tegenstrijdigheden intrigeren mij. Ik ga er graag op uit om vanuit observaties de structuur en gelaagde logica te reconstrueren om hier dan vervolgens mee aan de slag te gaan."
+              }
+            </p>
+          </div>
+
+          <div className='scale0_8 secondObserve transition200ms'>
+            <h2><span><BsBuildingGear/></span> BIM</h2>
+            <p>
+              {
+                (!isDutch)?
+                "Throughout my studies, I have specialised in digitalisation techniques and their automation. Small repetitive tasks aren't really my thing, I would much rather spend more time automating them and doing them much faster in the future.":
+                "Doorheen mijn studies heb ik mij gespecialiseerd in digitalisatie technieken en de automatisatie ervan. Kleine repetitieve taken daar heb ik het niet zo voor, ik hou mij dan veel liever iets langer bezig met dit te automatiseren en in de toekomst veel sneller te doen."
+              }
+            </p>
+          </div>
+
+          <div className='scale0_8 secondObserve transition200ms'>
+            <h2><span><BsWindow/></span> web-design</h2>
+            <p>
+              {
+                (!isDutch)?
+                "I have designed websites both on a professional level and as a hobby, where the technical aspect was challenging and the user experience was central. This website, for instance, was happily written entirely by myself.":
+                "Ik heb op zowel professioneel niveau en als hobby website's ontworpen waarbij het technische aspect uitdagend waren én de gebruikers ervaring centraal stond. Deze website is bijvoorbeeld met veel plezier volledig door mezelf geschreven."
+              }
+            </p>
+          </div>
+        </section>
         
 
         <div className='chapterTitle'>
@@ -168,7 +230,7 @@ function Test() {
         </section>
         
         <section className='project'>
-          <div className='textHolder' onClick={() => {setShowStudioA(true)}}>
+          <div className='textHolder' onClick={() => {setShowKapel(true)}}>
             <h1 className='secondObserve translateY200 transition800ms' >
               {
                 (!isDutch)?
@@ -184,12 +246,12 @@ function Test() {
           </div>
 
           <div className='imageHolder verticalImage observe translateY200 transition400ms'>
-            <img src={kapelLogo} alt="*sint-amanduskapel voordeur*" className='easeInOut flipVertically' />
+            <img src={kapelLogo} alt="*sint-amanduskapel voordeur*" className='easeInOut flipVertically' onClick={() => {setShowKapel(true)}} />
           </div>
         </section>
 
         <section className='project reverseRow'>
-          <div className='textHolder' onClick={() => {console.log("desity and desire")}}>
+          <div className='textHolder' onClick={() => {setShowDensity(true)}}>
             <h1 className='secondObserve translateY200 transition800ms'>"Density and Desire"</h1>
             <p className='secondObserve translateY100 transition800ms'>{
               (!isDutch)? 
@@ -199,17 +261,17 @@ function Test() {
           </div>
 
           <div className='imageHolder observe translateY200 transition400ms'>
-            <img src={densityLogo} alt="*Density and Desire*" className='easeInOut flipVertically' />
+            <img src={densityLogo} alt="*Density and Desire*" className='easeInOut flipVertically' onClick={() => {setShowDensity(true)}} />
           </div>
         </section>
 
         <section className='project'>
-          <div className='textHolder' onClick={() => {console.log("bim in renovations")}}>
+          <div className='textHolder' onClick={() => {setShowThesis(true)}}>
             <h1 className='secondObserve translateY200 transition800ms'>
               {
                 (!isDutch)?
-                "(WIP) BIM in Renovations":
-                "(WIP) BIM in Renovaties"
+                "BIM in Renovations":
+                "BIM in Renovaties"
               }
             </h1>
             <p className='secondObserve translateY100 transition800ms'>{
@@ -220,14 +282,14 @@ function Test() {
           </div>
 
           <div className='imageHolder observe translateY200 transition400ms'>
-            <img src={studioALogo} alt="*studio A*" className='easeInOut' />
+            <img src={thesisLogo} alt="*studio A*" className='easeInOut flipVertically' onClick={() => {setShowThesis(true)}} />
           </div>
         </section>
 
         <div className='linebreak extraMarginBottom'/>
 
         <section className='project reverseRow'>
-          <div className='textHolder' onClick={() => {console.log('display scouts carrier')}}>
+          <div className='textHolder' onClick={() => {setShowScouts(true)}}>
             <h1 className='secondObserve translateY200 transition800ms'>{
               (!isDutch)?
               "Scouts leader":
@@ -241,7 +303,7 @@ function Test() {
           </div>
 
           <div className='imageHolder observe translateY200 transition400ms'>
-            <div className='imageContainerSquare shapedBorder2 strict'>
+            <div className='imageContainerSquare shapedBorder2 strict easeInOut' onClick={() => {setShowScouts(true)}}>
               <img src={scoutsLogo} alt="*scoutskamp*" className='easeInOut' />
             </div>
           </div>
@@ -249,30 +311,36 @@ function Test() {
 
         <section className='centerItems extraMarginTop observe translateY200 transition400ms'>
           <div className='mainCallToAction '>
-            <h1>{(!isDutch)? "Let's work together!": 'Goesting om samen te werken?'}</h1>
+            <h1><span>{(!isDutch)? "": 'Goesting'}</span>{(!isDutch)? "Let's work together!": ' om samen te werken?'}</h1>
             <div>
-              <div>
+              <div onClick={(event) => {openInNewTab(event, 'https://www.linkedin.com/in/robbe-michiels-056956252/')}}>
                 <AiOutlineLinkedin className='icon'/>
-                <label>LinkedIn</label>
+                <label>Robbe Michiels</label>
               </div>
 
-              <div>
+              <div onClick={(event) => {copyToClipboard(event, 'robbe.mic@gmail.com')}}>
                 <HiAtSymbol className='icon'/>
-                <label>email</label>
+                <label>robbe.mic@gmail.com</label>
               </div>
 
               <div>
-                <p>{(!isDutch)? "Download my CV": "Download mijn CV"}</p>
+                <a 
+                  key={"cv"}
+                  title="download cv"
+                  href={(!isDutch)? cv_robbe_eng: cv_robbe_nl}
+                  download="CV_Robbe_Michiels"
+                >{(!isDutch)? "Download my CV": "Download mijn CV"}</a>
               </div>
             </div>
           </div>
           
         </section>
-
+        
+        {/* <p className='footer'>{(!isDutch)? "This website was written by me, using Vite, TypeScript and css": "Deze website is met zorg door mezelf geschreven, met gebruik van Vite, TypeScript en css."}</p> */}
       </div>
     </div>
     
   )
 }
 
-export default Test
+export default FinalMainPage
