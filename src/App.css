@@ -48,7 +48,7 @@ section {
 }
 
 .languageSwitch {
-  z-index: 15; 
+  z-index: 14; 
   position: absolute;
   display: flex;
   width: 95%;
@@ -237,7 +237,7 @@ section {
 }
 
 .interestsSection > div {
-  max-width: min(45%, 500px);
+  max-width: min(42%, 500px);
   padding-right: 40%;
   margin-top: -25px;
 }
@@ -525,3 +525,20 @@ section {
   background-color: rgb(17, 39, 80);
   color: whitesmoke;
 } */
+
+@media (width < 1120px) {
+  section {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .colouredBackground {
+    min-height: calc(100vh * 7.5);
+  }
+
+  .languageSwitch {
+    font-size: 1.5rem;
+  }
+
+  
+}

@@ -90,6 +90,24 @@ function openInNewTab (event:React.MouseEvent, url:string) {
     window.open(url, '_blank')
 }
 
+function scrollToAction (event:React.MouseEvent) {
+  event.preventDefault()
+  const container = document.querySelector('.contentContainer')
+  if(!container) {console.log('no container found'); return}
+  const mainCallToAction = container.querySelector('.mainCallToAction')
+  
+  if(!mainCallToAction) {console.log('no action found'); return}
+  console.log(mainCallToAction)
+  const containerHeight = container.scrollHeight
+  const elementHeight = mainCallToAction.scrollHeight
+
+  const position = (containerHeight - 1.5*elementHeight)
+
+  console.log('scrolling to ' + position)
+
+  container.scrollTo(0, position)
+}
+
   useEffect(() => {
     if (gottenLang === "?nl") {
       setIsDutch(true)
@@ -137,7 +155,7 @@ function openInNewTab (event:React.MouseEvent, url:string) {
               }
             </h1>
             <h3 className='appearAfterAnimation'>{(!isDutch)? "Masters-student in architecture & civil engineering" : "Master student ingenieur-architect"}</h3>
-            <p className='callToAction appearAfterAnimation'>{(!isDutch)? "Contact me!": "Contacteer mij!"}</p>
+            <p className='callToAction appearAfterAnimation' onClick={(event) => scrollToAction(event)}>{(!isDutch)? "Contact me!": "Contacteer mij!"}</p>
           </div>
         </div>
         
