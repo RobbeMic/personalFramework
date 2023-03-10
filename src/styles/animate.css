@@ -85,6 +85,25 @@
     --animation-duration: 2100ms
 }
 
+.hoverUpDown {
+    animation: hover 1500ms ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes hover {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(2vh) scale(1.05);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
 
 @keyframes screen-load {
     0% {

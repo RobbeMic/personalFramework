@@ -20,7 +20,7 @@ export default function KapelDisplay(open:boolean, setModalToClose:Function, isD
             <span onClick={() => setModalToClose(false)}>X</span>
             <div className="modalGrid">
                 <div className="aspect-ratio-1 titleSquare projectDescription">
-                    <h1>{(!isDutch)? "Saint-Amandus chapel": "Sint-Amanduskapel"}</h1>
+                    <h1>{(!isDutch)? "Saint-Amandus Chapel": "Sint-Amanduskapel"}</h1>
                     <img src={alex3} alt="" className="backgroudTextStudioA height_100"/>
 
                     <label >{(!isDutch)? "Desinged by:": "Ontworpen door:"}</label>
@@ -38,7 +38,7 @@ export default function KapelDisplay(open:boolean, setModalToClose:Function, isD
                     <p className="dissapearsWhenToSmall">{
                         (!isDutch)? 
                         "Located in the centre of Ghent, the Saint-Amandus Chapel of the former Alexian Monastery on Oude Houtlei. The assignment consisted of analysing the existing condition in group and drawing up a report based on this analysis, in preparation for a future restoration and repurposing.":
-                        "De Sint-Amandus kapel bevindt zich in het centrum van Gent, het was de kapel van het voormalig Alexianenklooster op de Oude Houtlei. De opdracht bestond uit het in groep analyseren van de bestaande toestand en op basis van deze analyse een verslag op te maken, ter voorbereiding van een toekomstige restauratie en herbestemming."
+                        "De Sint-Amandus kapel bevindt zich in het centrum van Gent, het is de kapel van het voormalig Alexianenklooster op de Oude Houtlei. De opdracht bestond uit het in groep analyseren van de bestaande toestand en op basis van deze analyse een verslag op te maken, ter voorbereiding van een toekomstige restauratie en herbestemming."
                     }</p>
                     <h4 className="dissapearsWhenToSmall">{(!isDutch)? "Used applications:": "Gebruikte tools:"}</h4>
                     <p className="dissapearsWhenToSmall">Miro, Autocad, Rhino, Photoshop, Indesign, Enscape</p>

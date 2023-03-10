@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AiOutlineLinkedin } from 'react-icons/ai'
-import { HiAtSymbol, HiOutlineBuildingLibrary } from 'react-icons/hi2'
+import { HiAtSymbol, HiOutlineBuildingLibrary, HiChevronDown, HiChevronUp } from 'react-icons/hi2'
 import { BsBuildingGear, BsWindow } from 'react-icons/bs'
-import { TbSourceCode, TbBuildingChurch } from 'react-icons/tb'
 
 import '../App.css'
 import '../styles/modal.css'
@@ -120,6 +119,29 @@ function scrollToAction (event:React.MouseEvent) {
   container.scrollTo(0, position)
 }
 
+function scrollDown (event:React.MouseEvent) {
+  event.preventDefault()
+
+  const container = document.querySelector('.contentContainer')
+  if(!container) {console.log('no container found'); return}
+
+  const greetingSection = container.querySelector('.greetingSection')
+  if(!greetingSection) {console.log('no greeting section found'); return}
+
+  const heigt = greetingSection.scrollHeight
+
+  container.scrollTo(0, heigt)
+}
+
+function scrollUp (event:React.MouseEvent) {
+  event.preventDefault()
+
+  const container = document.querySelector('.contentContainer')
+  if(!container) {console.log('no container found'); return}
+
+  container.scrollTo(0, 0)
+}
+
   // document.addEventListener("backbutton", () => {
   //   if (showDensity) {setShowDensity(false); return}
 
@@ -183,6 +205,8 @@ function scrollToAction (event:React.MouseEvent) {
             <p className='callToAction appearAfterAnimation' onClick={(event) => scrollToAction(event)}>{(!isDutch)? "Contact me!": "Contacteer mij!"}</p>
           </div>
         </div>
+
+        <div className='scrollInvitation hoverUpDown' onClick={(event) => scrollDown(event)}><HiChevronDown/></div>
         
         <img src={pf} alt="profile picture" className='shapedBorder1 profilePicture'/>
 
@@ -208,8 +232,8 @@ function scrollToAction (event:React.MouseEvent) {
             <p>
               {
                 (!isDutch)?
-                "Old buildings along with all their imperfections and contradictions intrigue me. I like to go out and recreate the structure and layered logic from observations and then get to work on this.":
-                "Oude gebouwen samen met al hun imperfecties en tegenstrijdigheden intrigeren mij. Ik ga er graag op uit om vanuit observaties de structuur en gelaagde logica te reconstrueren om hier dan vervolgens mee aan de slag te gaan."
+                "Old buildings, along with all their imperfections and contradictions, intrigue me. I like to go out and recreate the structure and layered logic from observations and then get to work on this.":
+                "Oude gebouwen, samen met al hun imperfecties en tegenstrijdigheden, intrigeren mij. Ik ga er graag op uit om vanuit observaties de structuur en gelaagde logica te reconstrueren om hier dan vervolgens mee aan de slag te gaan."
               }
             </p>
           </div>
@@ -220,7 +244,7 @@ function scrollToAction (event:React.MouseEvent) {
               {
                 (!isDutch)?
                 "Throughout my studies, I have specialised in digitalisation techniques and their automation. Small repetitive tasks aren't really my thing, I would much rather spend more time automating them and doing them much faster in the future.":
-                "Doorheen mijn studies heb ik mij gespecialiseerd in digitalisatie technieken en de automatisatie ervan. Kleine repetitieve taken daar heb ik het niet zo voor, ik hou mij dan veel liever iets langer bezig met dit te automatiseren en in de toekomst veel sneller te doen."
+                "Doorheen mijn studies specialiseerde ik mij in digitalisatie technieken en de automatisatie ervan. Kleine repetitieve taken daar heb ik het niet zo voor, ik investeer liever tijd om deze te automatiseren en ze in de toekomst veel sneller te doen."
               }
             </p>
           </div>
@@ -230,8 +254,8 @@ function scrollToAction (event:React.MouseEvent) {
             <p>
               {
                 (!isDutch)?
-                "I have designed websites both on a professional level and as a hobby, where the technical aspect was challenging and the user experience was central. This website, for instance, was happily written entirely by myself.":
-                "Ik heb op zowel professioneel niveau en als hobby website's ontworpen waarbij het technische aspect uitdagend waren én de gebruikers ervaring centraal stond. Deze website is bijvoorbeeld met veel plezier volledig door mezelf geschreven."
+                "I have designed websites both on a professional level and as a hobby, where the technical aspect was challenging and the user experience stood central. This website, for instance, was happily written entirely by myself.":
+                "Ik heb op zowel professioneel als op hobby niveau websites ontworpen waarbij het technische aspect uitdagend was én de gebruikerservaring centraal stond. Deze website is bijvoorbeeld met veel plezier volledig door mezelf geschreven."
               }
             </p>
           </div>
@@ -262,7 +286,7 @@ function scrollToAction (event:React.MouseEvent) {
             <h1 className='secondObserve translateY200 transition800ms' >"Studio A"</h1>
             <p className='secondObserve translateY100 transition800ms' >{
               (!isDutch)? 
-              "Design for a detention residence, in this project I renovated an old malt house into small scale detention situated in a residential area.":
+              "Design for a detention residence. In this project I renovated an old malt house into small scale detention situated in a residential area.":
               "Ontwerp voor een detentie huis, ondergebracht in een gerenoveerde mouterij midden in een bestaand bouwblok."
             }</p>
           </div>
@@ -277,7 +301,7 @@ function scrollToAction (event:React.MouseEvent) {
             <h1 className='secondObserve translateY200 transition800ms' >
               {
                 (!isDutch)?
-                "Saint-Amandus chapel":
+                "Saint-Amandus Chapel":
                 "Sint-Amanduskapel"
               }
             </h1>
@@ -298,7 +322,7 @@ function scrollToAction (event:React.MouseEvent) {
             <h1 className='secondObserve translateY200 transition800ms'>"Density and Desire"</h1>
             <p className='secondObserve translateY100 transition800ms'>{
               (!isDutch)? 
-              "Design for collective housing with 19 flexible living units. Sketchy investigation of a higher density in the outskirts of Ghent and an exploration in technical detailing.":
+              "Design for collective housing with 19 flexible living units. Sketch-based investigation of a higher density in the outskirts of Ghent and an exploration in technical detailing.":
               "Ontwerp voor een collectieve woning met 19 flexibele woon-eenheden. Schetsmatig onderzoek naar een hogere densiteit in de Gentse stadsrand en een exploratie in technische detaillering."
             }</p>
           </div>
@@ -319,8 +343,8 @@ function scrollToAction (event:React.MouseEvent) {
             </h1>
             <p className='secondObserve translateY100 transition800ms'>{
               (!isDutch)? 
-              "I'm currently working on my master thesis in which I research opportunities and challenges of applying BIM concepts in renovation projects. Specifically the challenge of first getting information out of the existing building into a BIM model before any 3d models are made.":
-              "Ik ben momenteel bezig met mijn master thesis, waarin ik onderzoek voer naar de mogelijkheden en uitdagingen om BIM concepten toe te passen in renovatie projecten. Specifieker gaat mijn onderzoek over informatie over het bestaande gebouw in een BIM model krijgen alvorens een 3d model is opgesteld."
+              "I'm currently working on my master thesis in which I research opportunities and challenges of applying BIM concepts in renovation projects. Specifically the challenge of first getting information out of the existing building into a BIM model before any 3D models are made.":
+              "Ik rond momenteel mijn master thesis af, waarin ik onderzoek voer naar de mogelijkheden en uitdagingen om BIM concepten toe te passen in renovatie projecten. Specifieker gaat mijn onderzoek over informatie van een bestaand gebouw in een BIM model te krijgen alvorens een 3D model is opgesteld."
             }</p>
           </div>
 
@@ -340,8 +364,8 @@ function scrollToAction (event:React.MouseEvent) {
               }</h1>
             <p className='secondObserve translateY100 transition800ms'>{
               (!isDutch)? 
-              "I have been a scouts leader for 7 years. I have been in charge of multiple groups of adolescents and young adults, acting as both team leader or instructor. As an instructor my main experience is to train experienced scouts leaders as competent team leaders.":
-              "Ik ben 7 jaar lang scouts leider geweest. Hierbij heb ik voor meerdere groepen pubers en jong volwassenen gestaan, zowel als team leider en als instructeur. Mijn ervaring als instructeur is vooral om ervaren scoutsleiders op te leiden tot uit de kluiten gewassen teamleiders"
+              "I have been a scouts leader for 7 years. I have been in charge of multiple groups of teenagers and young adults, acting as team leader or as instructor. As an instructor my main experience is to train experienced scouts leaders into competent team leaders.":
+              "Ik ben reeds 7 jaar scouts leider. Hierbij heb ik voor meerdere groepen pubers en jong volwassenen gestaan, als team leider en als instructeur. Mijn ervaring als instructeur is vooral om ervaren scoutsleiders op te leiden tot uit de kluiten gewassen teamleiders."
             }</p>
           </div>
 
@@ -377,9 +401,10 @@ function scrollToAction (event:React.MouseEvent) {
             </div>
           </div>
           
+          <div className='scrollUp' onClick={(event) => scrollUp(event)}><HiChevronUp/></div>
         </section>
         
-        {/* <p className='footer'>{(!isDutch)? "This website was written by me, using Vite, TypeScript and css": "Deze website is met zorg door mezelf geschreven, met gebruik van Vite, TypeScript en css."}</p> */}
+        
       </div>
     </div>
     

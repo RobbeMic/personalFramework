@@ -494,23 +494,11 @@ section {
 
 .mainCallToAction > div > *:last-child {
   text-decoration: underline;
-  /* align-self: flex-start; */
-  /* font-size: larger;
-  font-weight: bold;
-  border-style: solid;
-  border-width: thin;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 40px;
-  user-select: none;
-  margin-left: 0; */
 }
 
-/* .mainCallToAction > div > *:last-child:hover {
+.mainCallToAction > div > div > label:hover {
   cursor: pointer;
-  background-color: rgb(17, 39, 80);
-  color: whitesmoke;
-} */
+}
 
 .banner {
   display: none;
@@ -521,9 +509,47 @@ section {
   background-color: rgb(17, 39, 80);
 }
 
+.scrollInvitation {
+  position: absolute;
+  z-index: 11;
+  color: rgb(17, 39, 80);
+  top: 90vh;
+}
+
+.scrollInvitation > * {
+  min-height: 35px;
+  min-width: 35px;
+  font-weight: bold;
+}
+
+.scrollInvitation:hover {
+  cursor: pointer;
+}
+
+.scrollUp {
+  position: absolute;
+  z-index: 11;
+  color: whitesmoke;
+  top: max(475px, 43vh);
+}
+
+.scrollUp > * {
+  min-height: 35px;
+  min-width: 35px;
+  font-weight: bold;
+}
+
+.scrollUp:hover {
+  cursor: pointer;
+}
+
 @media (width < 1120px) {
   .banner {
     display: block;
+  }
+
+  .scrollInvitation {
+    display: none;
   }
 
   section {
