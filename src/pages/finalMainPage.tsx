@@ -39,6 +39,18 @@ function FinalMainPage() {
   const [showThesis, setShowThesis] = useState<boolean>(false)
   const [showScouts, setShowScouts] = useState<boolean>(false)
 
+  function toggleLanguage() {
+    if(isDutch) {
+      window.history.replaceState(undefined, document.title, "/personalPortfolio/")
+    }
+
+    if(!isDutch) {
+      window.history.replaceState(undefined, document.title, "/personalPortfolio/?nl")
+    }
+
+    setIsDutch(!isDutch)
+  }
+
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if(entry.isIntersecting) {
@@ -108,17 +120,18 @@ function scrollToAction (event:React.MouseEvent) {
   container.scrollTo(0, position)
 }
 
-  document.addEventListener("backbutton", () => {
-    if (showDensity) {setShowDensity(false); return}
+  // document.addEventListener("backbutton", () => {
+  //   if (showDensity) {setShowDensity(false); return}
 
-    if(showKapel) {setShowKapel(false); return}
+  //   if(showKapel) {setShowKapel(false); return}
 
-    if(showStudioA) {setShowStudioA(false); return}
+  //   if(showStudioA) {setShowStudioA(false); return}
 
-    if(showThesis) {setShowThesis(false); return}
+  //   if(showThesis) {setShowThesis(false); return}
 
-    if(showScouts) {setShowScouts(false); return}
-  })
+  //   if(showScouts) {setShowScouts(false); return}
+  // })
+  // this didn't work...
 
   useEffect(() => {
     if (gottenLang === "?nl") {
@@ -137,7 +150,7 @@ function scrollToAction (event:React.MouseEvent) {
       {ScoutsDisplay(showScouts, setShowScouts, isDutch)}
       <div className='scrollPreventer'/>
 
-      <div className='languageSwitch' onClick={() => setIsDutch(!isDutch)}>
+      <div className='languageSwitch' onClick={() => toggleLanguage()}>
         <p>nl | en</p>
       </div>
 
