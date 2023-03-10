@@ -82,13 +82,13 @@ function FinalMainPage() {
     navigator.clipboard.writeText(url)
 
     alert(`Copied "${url}" to your clipboard!`)
-}
+  }
 
-function openInNewTab (event:React.MouseEvent, url:string) {
-    event.preventDefault()
+  function openInNewTab (event:React.MouseEvent, url:string) {
+      event.preventDefault()
 
-    window.open(url, '_blank')
-}
+      window.open(url, '_blank')
+  }
 
 function scrollToAction (event:React.MouseEvent) {
   event.preventDefault()
@@ -107,6 +107,18 @@ function scrollToAction (event:React.MouseEvent) {
 
   container.scrollTo(0, position)
 }
+
+  document.addEventListener("backbutton", () => {
+    if (showDensity) {setShowDensity(false); return}
+
+    if(showKapel) {setShowKapel(false); return}
+
+    if(showStudioA) {setShowStudioA(false); return}
+
+    if(showThesis) {setShowThesis(false); return}
+
+    if(showScouts) {setShowScouts(false); return}
+  })
 
   useEffect(() => {
     if (gottenLang === "?nl") {
