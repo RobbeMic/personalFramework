@@ -20,8 +20,7 @@ export default function App() {
             <Router>
                 <Routes>
                     <Route path="/personalPortfolio/" element={<FinalMainPage/>} />
-                    {/* <Route path="/personalPortfolio/test" element={<Test/>} />
-                    <Route path="/personalPortfolio/studioA" element={StudioADisplay(true, () => {console.log('beep')}, false)}/>
+                    {/* <Route path="/personalPortfolio/studioA" element={StudioADisplay(true, () => {console.log('beep')}, false)}/>
                     <Route path="/personalPortfolio/kapel" element={KapelDisplay(true, () => {console.log('beep')}, false)}/>
                     <Route path="/personalPortfolio/density" element={DensityDisplay(true, () => {console.log('beep')}, false)}/>
                     <Route path="/personalPortfolio/thesis" element={ThesisDisplay(true, () => {console.log('beep')}, false)}/>

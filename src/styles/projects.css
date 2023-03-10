@@ -119,3 +119,139 @@ h3 span {
     padding-left: 50px;
     margin-bottom: -10px;
 }
+
+@media (width < 1900px) {
+    .projectDescription > h1 {
+        font-size: 3rem;
+    }
+
+    .projectDescription > h3 {
+        font-size: medium;
+    }
+
+    .projectDescription > p {
+        font-size: small;
+    }
+}
+
+@media (width < 1250px) {
+    .projectDescription > h1 {
+        font-size: 2rem;
+    }
+
+    .projectDescription > h3 {
+        font-size: smaller;
+    }
+
+    .projectDescription > p {
+        font-size: small;
+    }
+
+    .projectDescription > label {
+        margin-bottom: -10px;
+    }
+}
+
+@media (width < 1100px) {
+    .projectDescription > h1 {
+        font-size: 2rem;
+        margin-bottom: 5%;
+    }
+
+    .projectDescription > h3 {
+        font-size: smaller;
+    }
+
+    .projectDescription > p {
+        font-size: x-small;
+    }
+
+    .projectDescription > label {
+        margin-bottom: -10px;
+        font-size: small;
+    }
+}
+
+@media (width < 950px) {
+    .projectDescription > h1 {
+        font-size: 4rem;
+        margin-bottom: 15%;
+    }
+
+    .projectDescription > h3 {
+        font-size: large;
+    }
+
+    .projectDescription > p {
+        font-size: medium;
+    }
+
+    .projectDescription > label {
+        margin-bottom: -10px;
+        font-size: smaller;
+    }
+}
+
+@media (width < 700px) {
+    .projectDescription > h1 {
+        font-size: 2rem;
+    }
+
+    .projectDescription > h3 {
+        font-size: smaller;
+    }
+
+    .projectDescription > p {
+        font-size: small;
+    }
+
+    .projectDescription > label {
+        margin-bottom: -10px;
+    }
+}
+
+@media (width < 550px) {
+    .projectDescription > h1 {
+        font-size: 2rem;
+        margin-bottom: 5%;
+    }
+
+    .projectDescription > h3 {
+        font-size: smaller;
+    }
+
+    .projectDescription > p {
+        font-size: x-small;
+    }
+
+    .projectDescription > label {
+        margin-bottom: -10px;
+        font-size: small;
+    }
+}
+
+@media (width < 440px) {
+
+    .projectDescription > h1 {
+        margin-top: 10%;
+        font-size: 2rem;
+        margin-bottom: 3%;
+    }
+
+    .projectDescription > h3 {
+        font-size: smaller;
+        margin-bottom: 0;
+    }
+
+    .projectDescription > p {
+        font-size: x-small;
+    }
+
+    .projectDescription > label {
+        display: none;
+    }
+
+    .dissapearsWhenToSmall {
+        display: none;
+    }
+}

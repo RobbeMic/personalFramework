@@ -66,20 +66,6 @@
     animation: screen-load 500ms ease-in var(--animation-duration) forwards;
 }
 
-/* .slideUpWithWobble{
-    animation: up-with-wobble var(--animation-duration) ease-in var(--animation-1-delay) both;
-    opacity: 0;
-} */
-
-/* .animateIn {
-    animation: fromRight var(--animation-duration) ease-out var(--animation-1-delay) forwards;
-    opacity: 0;
-} */
-
-/* .animateIn2 {
-    animation: fromRight2 var(--animation-duration) ease-out var(--animation-1-delay) forwards;
-    opacity: 0;
-} */
 
 .scrollPreventer {
     min-height: 100vh;
@@ -99,18 +85,6 @@
     --animation-duration: 2100ms
 }
 
-/* body{
-    --animation-duration: 3000ms;
-    --animation-1-delay: 1s;
-    --animation-2-delay: 2000ms;
-    --height-up: calc(min(100px, 25vh) * -1);
-    --width-left: -10vw;
-    --starting-width-left: 25vw;
-
-    --end-color: rgb(17, 39, 80);
-    --start-color: rgb(30, 70, 144);
-
-} */
 
 @keyframes screen-load {
     0% {
@@ -122,90 +96,6 @@
     }
 }
 
-/* @keyframes fromRight {
-    0% {
-        transform: translateX(var(--width-left)) translateY(0) scale(0.3);
-        opacity: 0;
-        color: var(--start-color);
-    }
-
-    10% {
-        transform: translateX(var(--width-left)) translateY(var(--height-up)) scale(1.5);
-        opacity: 1;
-        color: var(--start-color);
-    }
-
-    80% {
-        transform: translateX(var(--width-left)) translateY(var(--height-up)) scale(1.5);
-        opacity: 1;
-        color: var(--start-color);
-    }
-
-    100% {
-        transform: translateX(0) translateY(0) scale(1);
-        opacity: 1;
-        color: var(--end-color);
-    }
-} */
-
-/* @keyframes fromRight2 {
-    0% {
-        transform: translateX(var(--width-left)) translateY(50px) scale(0.3);
-        opacity: 0;
-        color: var(--start-color);
-    }
-
-    20% {
-        transform: translateX(var(--width-left)) translateY(50px) scale(0.3);
-        opacity: 0;
-        color: var(--start-color);
-    }
-
-    35% {
-        transform: translateX(var(--width-left)) translateY(calc(var(--height-up) + 50px)) scale(1.5);
-        opacity: 1;
-        color: var(--start-color);
-    }
-
-    80% {
-        transform: translateX(var(--width-left)) translateY(calc(var(--height-up) + 50px)) scale(1.5);
-        opacity: 1;
-        color: var(--start-color);
-    }
-
-    100% {
-        transform: translateX(0) translateY(0) scale(1);
-        opacity: 1;
-        color: var(--end-color);
-    }
-} */
-
-/* @keyframes up-with-wobble {
-    0% {
-        transform: translateY(400px) translateX(10vw) rotateZ(-15deg) scale(0.7);
-        opacity: 0;
-    }
-
-    7% {
-        transform: translateY(5vh) translateX(10vw) rotateZ(0) scale(1.2);
-        opacity: 1;
-    }
-
-    75% {
-        transform: translateY(5vh) translateX(10vw) rotateZ(0) scale(1.2);
-        opacity: 1;
-    }
-
-    85% {
-        transform: translateY(0) translateX(0) rotateZ(0) scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(0) translateX(0) rotateZ(0) scale(1);
-        opacity: 1;
-    }
-} */
 
 @keyframes appear {
     0% {
@@ -319,5 +209,112 @@
     100% {
         opacity: 1;
         transform: translateY(0) translateX(0) scale(1);
+    }
+}
+
+@media (width < 1120px) {
+    .popUp {
+        animation: popUpMobile var(--animation-duration) ease-in 200ms forwards;
+    }
+
+    .popUpDelay {
+        animation: popUpDelayMobile var(--animation-duration) ease-in 200ms forwards;
+    }
+}
+
+@keyframes popUpMobile {
+    0% {
+        opacity: 0;
+        color: black;
+        transform: scale(0.6) translateX(50vw);
+
+        background-image: linear-gradient(to bottom right, orange 60%, orangered);
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: transparent; 
+    }
+
+    15% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+
+        background-image: linear-gradient(to bottom right, orange 60%, orangered);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: transparent; 
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+
+        background-image: linear-gradient(to bottom right, orange 60%, orangered);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: transparent; 
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes popUpDelayMobile {
+    0% {
+        opacity: 0;
+        color: black;
+        transform: scale(0.6) translateX(50vw);
+
+        background-image: linear-gradient(to bottom right, orange 60%, orangered);
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: transparent; 
+    }
+
+    25% {
+        opacity: 0;
+        color: black;
+        transform: scale(0.6) translateX(50vw);
+
+        background-image: linear-gradient(to bottom right, orange 60%, orangered);
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: transparent; 
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+
+        background-image: linear-gradient(to bottom right, orange 60%, orangered);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: transparent; 
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+
+        background-image: linear-gradient(to bottom right, orange 60%, orangered);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: transparent; 
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
     }
 }

@@ -23,14 +23,12 @@ export default function ThesisDisplay(open:boolean, setModalToClose:Function, is
                     <h3>{(!isDutch)? "Supervised by:": "Begeleid door:"}</h3>
                     <p>Paulus Present (Bureau Bouwtechniek), Jeroen Werbrouck</p>
 
-                    <h3>{(!isDutch)? "Project description:": "Project omschrijving:"}</h3>
-                    <p>{
+                    <h3 className="dissapearsWhenToSmall">{(!isDutch)? "Project description:": "Project omschrijving:"}</h3>
+                    <p className="dissapearsWhenToSmall">{
                         (!isDutch)? 
                         "I am currently working on my master's thesis, towards the opportunities and challenges of applying BIM concepts in renovation and restoration projects. Specifically, my research is about bringing the information obtained in the initial restorative survey into a BIM model before a 3d model is created. This makes it possible to survey a building first and only afterwards detail specific parts according to the needs of the renovation project.":
                         "Ik ben momenteel bezig met mijn master-proef omtrent de mogelijkheden en uitdagingen om BIM concepten toe te passen in renovatie en restauratie projecten. Specifieker gaat mijn onderzoek over de informatie die verkregen wordt in het initiële restauratieve onderzoek in een BIM model te krijgen alvorens men een 3d model heeft opgesteld. Dit stelt de mogelijkheid om eerst een gebouw te onderzoeken en achteraf pas specifieke delen gedetailleerder uit te werken naargelang de noden van het renovatie project."
                     }</p>
-                    {/* <h4>{(!isDutch)? "Used applications:": "Gebruikte tools:"}</h4>
-                    <p>Revit, Photoshop, Indesign, Illustrator</p> */}
 
                     
                 </div>

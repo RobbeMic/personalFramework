@@ -30,14 +30,14 @@ export default function DensityDisplay(open:boolean, setModalToClose:Function, i
                     <h3>{(!isDutch)? "Supervised by:": "Begeleid door:"}</h3>
                     <p>Dirk De Meester, Trice Hofkens</p>
 
-                    <h3>{(!isDutch)? "Project description:": "Project omschrijving:"}</h3>
-                    <p>{
+                    <h3 className="dissapearsWhenToSmall">{(!isDutch)? "Project description:": "Project omschrijving:"}</h3>
+                    <p className="dissapearsWhenToSmall">{
                         (!isDutch)? 
                         "In this assignment, the challenge was to organise some 19 housing units into collective housing. Victor and I had put maximum effort into the inclusion of different housing typologies within a rigid structure so that conversions would be possible over time. Furthermore, much attention was paid to increased contact with neighbours, a dynamic circulation large enough to serve as a small outdoor area provides space for these encounters.":
                         "In deze opdracht was het de uitdaging om een 19-tal wooneenheden te organiseren in een collectieve woning. Victor en Ik haddden maximaal ingezet op de inclusie van verschillende woning typologieën binnen een rigide structuur zodat verbouwingen op termijn mogelijk zijn. Verder is er veel aandacht gegaan naar het verhoogde contact met de buren, een dynamische circulatie die groot genoeg is om als kleine buitenruimte te dienen, voorziet plaats voor deze ontmoetingen."
                     }</p>
-                    <h4>{(!isDutch)? "Used applications:": "Gebruikte tools:"}</h4>
-                    <p>Autocad, Photoshop, Indesign, Rhino</p>
+                    <h4 className="dissapearsWhenToSmall">{(!isDutch)? "Used applications:": "Gebruikte tools:"}</h4>
+                    <p className="dissapearsWhenToSmall">Autocad, Photoshop, Indesign, Rhino</p>
 
                     
                 </div>

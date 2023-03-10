@@ -34,14 +34,14 @@ export default function KapelDisplay(open:boolean, setModalToClose:Function, isD
                     <h3>{(!isDutch)? "Supervised by:": "Begeleid door:"}</h3>
                     <p>Callebaut Architecten</p>
 
-                    <h3>{(!isDutch)? "Project description:": "Project omschrijving:"}</h3>
-                    <p>{
+                    <h3 className="dissapearsWhenToSmall">{(!isDutch)? "Project description:": "Project omschrijving:"}</h3>
+                    <p className="dissapearsWhenToSmall">{
                         (!isDutch)? 
                         "Located in the centre of Ghent, the Saint-Amandus Chapel of the former Alexian Monastery on Oude Houtlei. The assignment consisted of analysing the existing condition in group and drawing up a report based on this analysis, in preparation for a future restoration and repurposing.":
                         "De Sint-Amandus kapel bevindt zich in het centrum van Gent, het was de kapel van het voormalig Alexianenklooster op de Oude Houtlei. De opdracht bestond uit het in groep analyseren van de bestaande toestand en op basis van deze analyse een verslag op te maken, ter voorbereiding van een toekomstige restauratie en herbestemming."
                     }</p>
-                    <h4>{(!isDutch)? "Used applications:": "Gebruikte tools:"}</h4>
-                    <p>Miro, Autocad, Rhino, Photoshop, Indesign, Enscape</p>
+                    <h4 className="dissapearsWhenToSmall">{(!isDutch)? "Used applications:": "Gebruikte tools:"}</h4>
+                    <p className="dissapearsWhenToSmall">Miro, Autocad, Rhino, Photoshop, Indesign, Enscape</p>
 
                     
                 </div>

@@ -56,7 +56,7 @@ function FinalMainPage() {
             observer.unobserve(entry.target)
           }
       })
-  }, { rootMargin: "-200px" })
+  }, { rootMargin: "-25%" })
 
   async function observe() {
     let observedObjects = document.querySelectorAll(".observe")
@@ -125,11 +125,11 @@ function scrollToAction (event:React.MouseEvent) {
       {ScoutsDisplay(showScouts, setShowScouts, isDutch)}
       <div className='scrollPreventer'/>
 
-      <div className='languageSwitch'>
-        <p onClick={() => setIsDutch(!isDutch)}>nl | en</p>
+      <div className='languageSwitch' onClick={() => setIsDutch(!isDutch)}>
+        <p>nl | en</p>
       </div>
 
-      
+      <div className='banner'/>
 
       {NavBar(isDutch)}
       <div className='contentContainer' onScroll={() => {observe(); observe2()}}>
@@ -168,7 +168,7 @@ function scrollToAction (event:React.MouseEvent) {
 
         
         <div className='chapterTitle'>
-          <h1 className='fitContent scale0_8 observe2 transition200ms'>
+          <h1 className='fitContent scale0_8 secondObserve transition200ms'>
             {
               (!isDutch)?
               "My interests":

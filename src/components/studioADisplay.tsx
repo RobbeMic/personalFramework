@@ -26,14 +26,14 @@ export default function StudioADisplay(open:boolean, setModalToClose:Function, i
                     <h3>{(!isDutch)? "Supervised by:": "Begeleid door:"}</h3>
                     <p>Ronald De Meyer, Arthur De Roover, Martijn Vyncke</p>
 
-                    <h3>{(!isDutch)? "Project description:": "Project omschrijving:"}</h3>
-                    <p>{
+                    <h3 className="dissapearsWhenToSmall">{(!isDutch)? "Project description:": "Project omschrijving:"}</h3>
+                    <p className="dissapearsWhenToSmall">{
                         (!isDutch)? 
                         "In this master studio, the assignment was to plan a detention house in the urban fabric of Ghent. I had chosen to renovate an old and partly protected malt house for this purpose. The challenge was to keep the different clusters, each with a different detention level, separate from each other while still allowing individual freedom to a controlled degree. In this project, I experienced the process of reconstructing a building from plans found in the city archive and on-site visits into a usable BIM model.":
                         "In deze master studio was de opdracht om in het stedelijk weefsel van Gent een detentie huis in te plannen. Ik had ervoor gekozen om hiervoor een oude en deels beschermde mouterij te renoveren. De uitdaging lag in de verschillende clusters met elks een verschillend detentie niveau van elkaar gescheiden te houden terwijl toch individule vrijheid in gecontrolleerde mate toe te staan. Met deze opdracht heb ik het process ervaren om van plannen uit het stads archief en site bezoeken, een gebouw te reconstrueren in een bruikbaar BIM model."
                     }</p>
-                    <h4>{(!isDutch)? "Used applications:": "Gebruikte tools:"}</h4>
-                    <p>Revit, Photoshop, Indesign, Illustrator</p>
+                    <h4 className="dissapearsWhenToSmall">{(!isDutch)? "Used applications:": "Gebruikte tools:"}</h4>
+                    <p className="dissapearsWhenToSmall">Revit, Photoshop, Indesign, Illustrator</p>
 
                     
                 </div>
