@@ -283,7 +283,7 @@ function scrollToAction (event:React.MouseEvent) {
             </h1>
             <p className='secondObserve translateY100 transition800ms' >{
               (!isDutch)? 
-              "Restorative study for an old chapel in the centre of Ghent. Research into the damage patters, developed into a renovation proposal.":
+              "Restorative study for an old chapel in the centre of Ghent. Research into the damage patterns, developed into a renovation proposal.":
               "Restauratieve studie voor een oude kapel in het centrum van Gent. Onderzoek naar de schade fenomenen, uitgewerkt tot een renovatie voorstel."
             }</p>
           </div>
@@ -298,8 +298,8 @@ function scrollToAction (event:React.MouseEvent) {
             <h1 className='secondObserve translateY200 transition800ms'>"Density and Desire"</h1>
             <p className='secondObserve translateY100 transition800ms'>{
               (!isDutch)? 
-              "Design for a detention residence, in this project I renovated an old malt house into small scale detention situated in a residential area.":
-              "Ontwerp voor een detentie huis, ondergebracht in een gerenoveerde mouterij midden in een bestaand bouwblok."
+              "Design for collective housing with 19 flexible living units. Sketchy investigation of a higher density in the outskirts of Ghent and an exploration in technical detailing.":
+              "Ontwerp voor een collectieve woning met 19 flexibele woon-eenheden. Schetsmatig onderzoek naar een hogere densiteit in de Gentse stadsrand en een exploratie in technische detaillering."
             }</p>
           </div>
 
