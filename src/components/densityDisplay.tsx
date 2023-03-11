@@ -15,6 +15,7 @@ import maquette3 from '../assets/density/maquette3.jpg'
 import gevelImpressie from '../assets/density/RobbeVictor gevelimpressie.jpg'
 import tekeningTuin from '../assets/density/tekening tuin met mensen.png'
 import tekeningSepia from '../assets/density/tekening tuin sepia.png'
+import gevelImpressieCropped from '../assets/density/RobbeVictor gevelimpressie cropped.jpg'
 
 export default function DensityDisplay(open:boolean, setModalToClose:Function, isDutch:boolean) {
     return <div className={open? "modalBackground": "hidden"} >
@@ -52,7 +53,7 @@ export default function DensityDisplay(open:boolean, setModalToClose:Function, i
                     <ul className="grid-span-2 grid-row-2"><img src={jury_detail_plan} alt="detail plan studios" /></ul>
                     <ul className="grid-span-2 grid-row-2"><img src={beeldGallerij} alt="beeld buitenruimte gallerij" /></ul>
                     <ul><img src={maquette3} alt="foto maquette" /></ul>
-                    <ul><img src={gevelImpressie} alt="impressie beeld gevel" /></ul>
+                    <ul><img src={gevelImpressieCropped} alt="impressie beeld gevel" /></ul>
                     <ul><img src={snede1} alt="snede" /></ul>
                     
                     <ul><img src={maquette1} alt="foto maquette" /></ul>

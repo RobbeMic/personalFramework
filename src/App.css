@@ -7,6 +7,9 @@ section {
   color: whitesmoke;
 }
 
+.scaleLarger {
+  scale: 1.2;
+}
 
 .linebreak {
   min-width: calc(min(75vw, 1200px) * 0.8);
