@@ -221,7 +221,7 @@ function scrollUp (event:React.MouseEvent) {
             {
               (!isDutch)?
               "My interests":
-              "Mijn intresses"
+              "Mijn interesses"
             }
           </h1>
         </div>
