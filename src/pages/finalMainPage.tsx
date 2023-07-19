@@ -38,6 +38,39 @@ function FinalMainPage() {
   const [showThesis, setShowThesis] = useState<boolean>(false)
   const [showScouts, setShowScouts] = useState<boolean>(false)
 
+
+  function getPageHeight() {
+    const containerElement = document.getElementById("contentContainer")
+
+    if (containerElement) {
+      const colouredBackground = document.getElementById('colouredBackground')
+
+      if(colouredBackground) {
+        colouredBackground.style.minHeight = 'none'
+        colouredBackground.style.height = '150vh'
+
+        let pageHeight = containerElement.scrollHeight
+
+        console.log(pageHeight)
+        colouredBackground.style.minHeight = pageHeight + 'px'
+      }
+    }
+
+    // const bottomElementOfPage = document.getElementById("bottomElementOfPage")
+    // if(bottomElementOfPage) {
+    //   let pageHeight = bottomElementOfPage.getBoundingClientRect().bottom
+
+    //   console.log(pageHeight)
+
+    //   const colouredBackground = document.getElementById('colouredBackground')
+
+    //   if(colouredBackground) {
+    //     colouredBackground.style.minHeight = pageHeight + 'px'
+    //   }
+    // }
+  }
+  
+
   function toggleLanguage() {
     if(isDutch) {
       window.history.replaceState(undefined, document.title, "/personalPortfolio/")
@@ -159,7 +192,13 @@ function scrollUp (event:React.MouseEvent) {
     if (gottenLang === "?nl") {
       setIsDutch(true)
     }
+
+    getPageHeight()
   }, [])
+
+  window.onresize = () => {
+    getPageHeight()
+  }
 
   return (
     
@@ -179,11 +218,11 @@ function scrollUp (event:React.MouseEvent) {
       <div className='banner'/>
 
       {NavBar(isDutch)}
-      <div className='contentContainer' onScroll={() => {observe(); observe2()}}>
+      <div className='contentContainer' onScroll={() => {observe(); observe2()}} id='contentContainer'>
 
         <div className='blackScreen animateUp' />
 
-        <div className='colouredBackground'></div>
+        <div className='colouredBackground' id='colouredBackground' ></div>
         
         <div className='greetingTitle'>
           <div>
@@ -201,7 +240,7 @@ function scrollUp (event:React.MouseEvent) {
                 "Ik ben Robbe"
               }
             </h1>
-            <h3 className='appearAfterAnimation'>{(!isDutch)? "Masters-student in architecture & civil engineering" : "Master student ingenieur-architect"}</h3>
+            <h3 className='appearAfterAnimation'>{(!isDutch)? "Recently graduated in Architecture & Civil Engineering" : "Recent Afgestudeerd als Burgerlijk Ingenieur-Architect"}</h3>
             <p className='callToAction appearAfterAnimation' onClick={(event) => scrollToAction(event)}>{(!isDutch)? "Contact me!": "Contacteer mij!"}</p>
           </div>
         </div>
@@ -343,8 +382,8 @@ function scrollUp (event:React.MouseEvent) {
             </h1>
             <p className='secondObserve translateY100 transition800ms'>{
               (!isDutch)? 
-              "I'm currently working on my master thesis in which I research opportunities and challenges of applying BIM concepts in renovation projects. Specifically the challenge of first getting information out of the existing building into a BIM model before any 3D models are made.":
-              "Ik rond momenteel mijn master thesis af, waarin ik onderzoek voer naar de mogelijkheden en uitdagingen om BIM concepten toe te passen in renovatie projecten. Specifieker gaat mijn onderzoek over informatie van een bestaand gebouw in een BIM model te krijgen alvorens een 3D model is opgesteld."
+              "During my master's thesis, I conducted research on the opportunities and challenges of applying BIM concepts in renovation projects. Specifically the challenge of first getting information out of the existing building into a BIM model before any 3D models are made.":
+              "In mijn master thesis heb ik onderzoek gevoerd naar de mogelijkheden en uitdagingen om BIM concepten toe te passen in renovatie projecten. Specifieker ging mijn onderzoek over informatie van een bestaand gebouw in een BIM model te krijgen alvorens een 3D model op te stellen."
             }</p>
           </div>
 
@@ -365,7 +404,7 @@ function scrollUp (event:React.MouseEvent) {
             <p className='secondObserve translateY100 transition800ms'>{
               (!isDutch)? 
               "I have been a scouts leader for 7 years. I have been in charge of multiple groups of teenagers and young adults, acting as team leader or as instructor. As an instructor my main experience is to train experienced scouts leaders into competent team leaders.":
-              "Ik ben reeds 7 jaar scouts leider. Hierbij heb ik voor meerdere groepen pubers en jong volwassenen gestaan, als team leider en als instructeur. Mijn ervaring als instructeur is vooral om ervaren scoutsleiders op te leiden tot uit de kluiten gewassen teamleiders."
+              "Ik ben voor 7 jaar scouts leider geweest. Hierbij heb ik voor meerdere groepen pubers en jong volwassenen gestaan, als team leider en als instructeur. Mijn ervaring als instructeur is vooral om ervaren scoutsleiders op te leiden tot uit de kluiten gewassen teamleiders."
             }</p>
           </div>
 
@@ -401,7 +440,7 @@ function scrollUp (event:React.MouseEvent) {
             </div>
           </div>
           
-          <div className='scrollUp' onClick={(event) => scrollUp(event)}><HiChevronUp/></div>
+          <div className='scrollUp' onClick={(event) => scrollUp(event)} id='bottomElementOfPage' ><HiChevronUp/></div>
         </section>
         
         
