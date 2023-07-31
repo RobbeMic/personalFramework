@@ -36,7 +36,7 @@ export default function NavBar(isDutch:boolean) {
         <a 
             key={"cv"}
             title="download cv"
-            href={(!isDutch)? cv_robbe_eng: cv_robbe_nl}
+            href={(!isDutch)? cv_robbe_eng: cv_robbe_nl} 
             download="CV_Robbe_Michiels">
                 CV</a>
     </div>
