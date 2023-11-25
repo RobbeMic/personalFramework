@@ -243,7 +243,7 @@ function scrollUp (event:React.MouseEvent) {
               }
             </h1>
             <div className='appearAfterAnimation subText'>
-              <h3>{(!isDutch)? "Architect & Civil Engineer at Steenmeijer Architects" : `Ingenieur-Architect bij `}</h3>
+              <h3>{(!isDutch)? "Architect & Civil Engineer at " : `Ingenieur-Architect bij `}</h3>
               <img src={logo_SA} className='SALogoInText' alt="steenmeijer architecten" />
             </div>
             <p className='callToAction appearAfterAnimation' onClick={(event) => scrollToAction(event)}>{(!isDutch)? "Contact me!": "Contacteer mij!"}</p>
