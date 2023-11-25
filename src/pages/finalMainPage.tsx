@@ -28,6 +28,8 @@ import thesisLogoAlt from '../assets/thesis logo alt.png'
 import cv_robbe_eng from '../assets/cv_robbe_eng.pdf'
 import cv_robbe_nl from '../assets/cv_robbe_nl.pdf'
 
+import logo_SA from '../assets/logo-cmyk.gif'
+
 
 function FinalMainPage() {
   const gottenLang = window.location.search
@@ -240,7 +242,10 @@ function scrollUp (event:React.MouseEvent) {
                 "Ik ben Robbe"
               }
             </h1>
-            <h3 className='appearAfterAnimation'>{(!isDutch)? "Recently graduated in Architecture & Civil Engineering" : "Recent Afgestudeerd als Burgerlijk Ingenieur-Architect"}</h3>
+            <div className='appearAfterAnimation subText'>
+              <h3>{(!isDutch)? "Architect & Civil Engineer at Steenmeijer Architects" : `Ingenieur-Architect bij `}</h3>
+              <img src={logo_SA} className='SALogoInText' alt="steenmeijer architecten" />
+            </div>
             <p className='callToAction appearAfterAnimation' onClick={(event) => scrollToAction(event)}>{(!isDutch)? "Contact me!": "Contacteer mij!"}</p>
           </div>
         </div>

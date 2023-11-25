@@ -215,6 +215,26 @@ section {
   font-size: 6rem;
 } */
 
+.greetingTitle > * > .subText {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  gap: 1em;
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+
+.subText > * {
+  margin: 0;
+  font-size: 1.17rem;
+  min-width: fit-content;
+}
+
+.SALogoInText {
+  max-height: 2em;
+  margin-bottom: 0.2rem;
+}
+
 .interestsSection {
   display: flex;
   flex-direction: column;
